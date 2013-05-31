@@ -20,23 +20,19 @@
     <!-- Page scripts -->
     <script src="/scripts/application/main.js"></script>
     <script>
-      function fitSize() {
+      function redraw() {
         $('.section').width($(window).width());
         $('.section').height($(window).height());
-      }
-
-      $(window).resize(function() {
-        fitSize();
-      });
-
-      $(function(){
-        fitSize();
 
         $.stellar({
           horizontalScrolling: false,
-          verticalOffset: 7
+          verticalOffset: 7,
+          scrollProperty: 'transform'
         });
-      });
+      }
+
+      $(window).resize(redraw);
+      $(redraw);
     </script>
 
     <!-- Stylesheets -->
