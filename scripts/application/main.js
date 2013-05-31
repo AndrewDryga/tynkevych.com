@@ -53,7 +53,7 @@ function redraw() {
       $nav_prev.css('opacity', nav_prev_opacity*0.5);
     }
 
-    var nav_next_offset = last_section_offset - offset;
+    var nav_next_offset = last_section_offset - offset - $nav_next.height();
     var nav_next_opacity = nav_next_offset / section_height;
     nav_next_offset -= section_height;
 
