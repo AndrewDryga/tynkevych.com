@@ -29,7 +29,7 @@ $(function() {
   }
 
   function getCurrentSection(viewport_offset) {
-    var offset = $(window).scrollTop() + (viewport_offset ? viewport_offset : 0);
+    var offset = $window.scrollTop() + (viewport_offset ? viewport_offset : 0);
     var section;
     $sections.each(function() {
       var $this = $(this);
@@ -42,7 +42,7 @@ $(function() {
   }
 
   function scrollSpy() {
-    var offset = $(window).scrollTop();
+    var offset = $window.scrollTop();
 
     // Top nav element
     var nav_prev_offset = section_height > offset ? section_height - offset : 0;
@@ -80,13 +80,13 @@ $(function() {
 
   // Fix widths
   rescaleSections();
-  $(window).resize(rescaleSections);
-  $(window).load(rescaleSections);
+  $window.resize(rescaleSections);
+  $window.load(rescaleSections);
 
   // Navigation
   (function() {
     $nav_prev.find('.nav-pill').click(function() {
-      var prev_section = getCurrentSection($(window).height()/2).prev('.section');
+      var prev_section = getCurrentSection($window.height()/2).prev('.section');
       var prev_section_offset = prev_section.length > 0 ? prev_section.offset().top : first_section_offset;
       $('body,html').animate({scrollTop: prev_section_offset + 'px'}, 800);
     });
@@ -106,9 +106,9 @@ $(function() {
     });
 
     scrollSpy();
-    $(window).scroll(scrollSpy);
-    $('body').on('touchmove', scrollSpy);
-    $(window).load(scrollSpy);
-    $(window).resize(scrollSpy);
+    $window.scroll(scrollSpy);
+    $document.on('touchstart touchmove', scrollSpy);
+    $window.load(scrollSpy);
+    $window.resize(scrollSpy);
   })();
 });
