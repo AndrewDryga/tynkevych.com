@@ -107,6 +107,7 @@ $(function() {
 
     scrollSpy();
     $(window).scroll(scrollSpy);
+    $('body').on('touchmove', scrollSpy);
     $(window).load(scrollSpy);
     $(window).resize(scrollSpy);
   })();
