@@ -53,10 +53,10 @@ function redraw() {
       $nav_prev.css('opacity', nav_prev_opacity*0.5);
     }
 
-    var nav_next_offset = last_section_offset - offset - 44;
+    var nav_next_offset = last_section_offset - offset + 44;
     var nav_next_opacity = nav_next_offset / section_height;
     nav_next_offset -= section_height;
-    console.log(nav_next_offset);
+
     if(nav_next_offset > 0) {
       $nav_next.css('bottom', '5px');
     } else {
