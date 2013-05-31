@@ -81,13 +81,13 @@ $(function() {
 
   // Navigation
   (function() {
-    $nav_prev.click(function() {
+    $nav_prev.find('.nav-pill').click(function() {
       var prev_section = getCurrentSection($(window).height()/2).prev('.section');
       var prev_section_offset = prev_section.length > 0 ? prev_section.offset().top : first_section_offset;
       $('body,html').animate({scrollTop: prev_section_offset + 'px'}, 800);
     });
 
-    $nav_next.click(function() {
+    $nav_next.find('.nav-pill').click(function() {
       var next_section = getCurrentSection().next('.section');
       var last_section_offset = next_section.length > 0 ? next_section.offset().top : last_section_offset;
       $('body,html').animate({'scrollTop': last_section_offset + 'px'}, 800);
