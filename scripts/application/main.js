@@ -3,6 +3,7 @@ $(function() {
   var $window = $(window);
   var $document = $(document);
   var $sections = $('.section');
+  var $video_players = $sections.find('.player');
   var $nav_prev = $('.nav-prev');
   var $nav_next = $('.nav-next');
   var $first_section = $sections.first();
@@ -12,11 +13,14 @@ $(function() {
   var section_height = $first_section.height();
   var first_section_offset = 0;
   var last_section_offset = $last_section.offset().top;
+  var video_player_ratio = 1.8;
 
   // Methods
   function rescaleSections() {
     $sections.width($window.width());
     $sections.height($window.height());
+
+    $video_players.height($video_players.width()*video_player_ratio);
 
     // Recalc params
     section_height = $first_section.outerHeight();
