@@ -89,8 +89,8 @@ body {
   padding-bottom: 56.25%; /* 16:9 */
   position: absolute;
   top: 15%;
-  right: 15%;
-  left: 15%;
+  right: 0;
+  left: 0;
   bottom: 15%;
 }
 

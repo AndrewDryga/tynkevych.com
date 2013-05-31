@@ -3,6 +3,8 @@ $(function() {
   var $window = $(window);
   var $document = $(document);
   var $sections = $('.section');
+  var $players_wraps = $sections.find('.player-wrap');
+  var $players = $players_wraps.find('.player');
   var $nav_prev = $('.nav-prev');
   var $nav_next = $('.nav-next');
   var $first_section = $sections.first();
@@ -12,6 +14,7 @@ $(function() {
   var section_height = $first_section.height();
   var first_section_offset = 0;
   var last_section_offset = $last_section.offset().top;
+  var player_height = $players.height();
 
   // Methods
   function rescaleSections() {
@@ -19,6 +22,13 @@ $(function() {
     section_height = $first_section.outerHeight();
     first_section_offset = 0;
     last_section_offset = $last_section.offset().top;
+    player_height = $players.height();
+
+    var margins = (section_height - player_height) / 2;
+    $players_wraps.css({
+      top: margins + 'px',
+      bottom: margins + 'px'
+    });
   }
 
   function getCurrentSection(viewport_offset) {
