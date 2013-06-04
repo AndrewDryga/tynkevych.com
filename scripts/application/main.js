@@ -23,12 +23,6 @@ $(function() {
     first_section_offset = 0;
     last_section_offset = $last_section.offset().top;
     player_height = $players.height();
-
-    var margins = (section_height - player_height) / 2;
-    $players_wraps.css({
-      top: margins + 'px',
-      bottom: margins + 'px'
-    });
   }
 
   function getCurrentSection(viewport_offset) {
