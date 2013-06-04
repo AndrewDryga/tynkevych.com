@@ -28,9 +28,8 @@ body {
 }
 
 a {
-  color:#9A721A;
+  color:#FFF;
   text-decoration:none;
-  font-family:"Times New Roman", Times, serif;
   font-style:italic;
 }
 
@@ -65,6 +64,13 @@ body {
 .logo {
   width: 300px;
   height: 300px;
+  display: block;
+  margin: 0 auto;
+}
+
+.contacts {
+  list-style-type: none;
+  padding: 0;
 }
 
 .section {
@@ -74,7 +80,6 @@ body {
   background-repeat: no-repeat;
 
   overflow:hidden;
-  webkit-transform: translate3d(0,0,0);
   z-index: 1;
 
   width: 100%;
@@ -148,7 +153,7 @@ body {
   color: #ffffff;
   position: absolute;
   top: 14px;
-  right: 11px;
+  right: 6px;
 }
 
 .fixed .nav-pill:hover,
