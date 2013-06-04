@@ -62,6 +62,11 @@ body {
   z-index: 0;
 }
 
+.logo {
+  width: 300px;
+  height: 300px;
+}
+
 .section {
   background-size: cover;
   background-attachment: fixed;
