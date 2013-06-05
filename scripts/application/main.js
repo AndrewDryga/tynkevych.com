@@ -10,7 +10,7 @@ $(function() {
   var $last_section = $sections.last();
 
   var userAgent = window.navigator.userAgent;
-  var navigation_disabled = userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i);
+  var isMobile = userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i);
 
   // Params
   var section_height = $first_section.height();
@@ -90,9 +90,10 @@ $(function() {
 
   // Scroll spy
   (function() {
-    if(navigation_disabled) {
+    if(isMobile) {
       $nav_prev.add($nav_next).remove();
       $('body,html').animate({scrollTop: '40px'}, 800);
+      $sections.css('background-attachment', 'scroll');
     } else {
       // Navigation
       (function() {
