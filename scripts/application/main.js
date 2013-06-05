@@ -92,6 +92,7 @@ $(function() {
   (function() {
     if(navigation_disabled) {
       $nav_prev.add($nav_next).remove();
+      $('body,html').animate({scrollTop: '40px'}, 800);
     } else {
       // Navigation
       (function() {
