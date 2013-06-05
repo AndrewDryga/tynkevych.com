@@ -92,8 +92,12 @@ $(function() {
   (function() {
     if(isMobile) {
       $nav_prev.add($nav_next).remove();
-      $('body,html').animate({scrollTop: '40px'}, 800);
       $sections.css('background-attachment', 'scroll');
+      $(window).load(function() {
+        if($window.scrollTop() == 0) {
+          $('body,html').animate({scrollTop: '40px'}, 800);
+        }
+      });
     } else {
       // Navigation
       (function() {
