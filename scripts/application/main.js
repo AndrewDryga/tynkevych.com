@@ -9,6 +9,9 @@ $(function() {
   var $first_section = $sections.first();
   var $last_section = $sections.last();
 
+  var userAgent = window.navigator.userAgent;
+  var navigation_disabled = userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i);
+
   // Params
   var section_height = $first_section.height();
   var first_section_offset = 0;
@@ -85,32 +88,35 @@ $(function() {
   $window.resize(rescaleSections);
   $window.load(rescaleSections);
 
-  // Navigation
-  (function() {
-    $nav_prev.find('.nav-pill').click(function() {
-      var prev_section = getCurrentSection($window.height()/2).prev('.section');
-      var prev_section_offset = prev_section.length > 0 ? prev_section.offset().top : first_section_offset;
-      $('body,html').animate({scrollTop: prev_section_offset + 'px'}, 800);
-    });
-
-    $nav_next.find('.nav-pill').click(function() {
-      var next_section = getCurrentSection().next('.section');
-      var last_section_offset = next_section.length > 0 ? next_section.offset().top : last_section_offset;
-      $('body,html').animate({'scrollTop': last_section_offset + 'px'}, 800);
-    });
-  })();
-
   // Scroll spy
   (function() {
-    $nav_prev.css({
-      'top': section_height + 'px',
-      'opacity': 0
-    });
+    if(navigation_disabled) {
+      $nav_prev.add($nav_next).remove();
+    } else {
+      // Navigation
+      (function() {
+        $nav_prev.find('.nav-pill').click(function() {
+          var prev_section = getCurrentSection($window.height()/2).prev('.section');
+          var prev_section_offset = prev_section.length > 0 ? prev_section.offset().top : first_section_offset;
+          $('body,html').animate({scrollTop: prev_section_offset + 'px'}, 800);
+        });
 
-    scrollSpy();
-    $window.scroll(scrollSpy);
-    $document.on('touchstart touchmove', scrollSpy);
-    $window.load(scrollSpy);
-    $window.resize(scrollSpy);
+        $nav_next.find('.nav-pill').click(function() {
+          var next_section = getCurrentSection().next('.section');
+          var last_section_offset = next_section.length > 0 ? next_section.offset().top : last_section_offset;
+          $('body,html').animate({'scrollTop': last_section_offset + 'px'}, 800);
+        });
+      })();
+
+      $nav_prev.css({
+        'top': section_height + 'px',
+        'opacity': 0
+      });
+
+      scrollSpy();
+      $window.scroll(scrollSpy);
+      $window.load(scrollSpy);
+      $window.resize(scrollSpy);
+    }
   })();
 });
