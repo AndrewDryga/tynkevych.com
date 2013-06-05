@@ -3,8 +3,7 @@ $(function() {
   var $window = $(window);
   var $document = $(document);
   var $sections = $('.section');
-  var $players_wraps = $sections.find('.player-wrap');
-  var $players = $players_wraps.find('.player');
+  var $players = $sections.find('.player');
   var $nav_prev = $('.nav-prev');
   var $nav_next = $('.nav-next');
   var $first_section = $sections.first();
@@ -18,6 +17,12 @@ $(function() {
 
   // Methods
   function rescaleSections() {
+    // Fix players aspect ratio
+    $players.each(function() {
+      var $player = $(this);
+      $player.height($player.width() / $player.data('aspect-ratio'));
+    });
+
     // Recalc params
     section_height = $first_section.outerHeight();
     first_section_offset = 0;
