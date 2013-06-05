@@ -51,7 +51,7 @@ $(function() {
       $nav_prev.css('opacity', '');
     } else {
       $nav_prev.removeClass('fixed');
-      $nav_prev.css('opacity', nav_prev_opacity*0.5);
+      $nav_prev.css('opacity', nav_prev_opacity);
     }
 
     // Bottom nav element
@@ -68,7 +68,7 @@ $(function() {
       $nav_next.css('opacity', '');
     } else if(nav_next_opacity >= 0) {
       $nav_next.removeClass('fixed');
-      $nav_next.css('opacity', nav_next_opacity*0.5);
+      $nav_next.css('opacity', nav_next_opacity);
     } else {
       $nav_next.removeClass('fixed');
       $nav_next.css('opacity', 0);
