@@ -29,6 +29,77 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="/stylesheets/main.css" type="text/css">
+    <style type="text/css">
+      /* Default backgrounds */
+      .main {
+        background-image:url(/images/background/main.jpg);
+      }
+
+      .masha {
+        background-image:url(/images/background/masha.jpg);
+      }
+
+      .acoustic {
+        background-image:url(/images/background/acoustic.jpg)
+      }
+
+      .balllerina {
+        background-image:url(/images/background/balllerina.jpg)
+      }
+
+      .art_deco {
+        background-image:url(/images/background/art_deco.jpg)
+      }
+
+      /* Phones */
+      @media only screen
+             and (max-width : 767px) {
+        .main {
+          background-image:url(/images/background/main_767.jpg);
+        }
+
+        .masha {
+          background-image:url(/images/background/masha_767.jpg);
+        }
+
+        .acoustic {
+          background-image:url(/images/background/acoustic_767.jpg)
+        }
+
+        .balllerina {
+          background-image:url(/images/background/balllerina_767.jpg)
+        }
+
+        .art_deco {
+          background-image:url(/images/background/art_deco_767.jpg)
+        }
+      }
+
+      /* Tablets */
+      @media only screen
+             and (min-width : 768px)
+             and (max-width : 1024px) {
+        .main {
+          background-image:url(/images/background/main_1024.jpg);
+        }
+
+        .masha {
+          background-image:url(/images/background/masha_1024.jpg);
+        }
+
+        .acoustic {
+          background-image:url(/images/background/acoustic_1024.jpg)
+        }
+
+        .balllerina {
+          background-image:url(/images/background/balllerina_1024.jpg)
+        }
+
+        .art_deco {
+          background-image:url(/images/background/art_deco_1024.jpg)
+        }
+      }
+    </style>
 
     <!-- Favicon -->
     <link rel="icon" href="/images/favicon.png" type="image/png">
@@ -40,7 +111,7 @@
     <div class="nav-prev"><div class="nav-pill"><a>^</a></div></div>
     <div class="nav-next fixed"><div class="nav-pill"><a>^</a></div></div>
 
-    <section class="section" data-stellar-background-ratio="0.5" style="background-image:url(/images/background/main.jpg)">
+    <section class="section main" data-stellar-background-ratio="0.5">
       <div class="center">
         <img src="/images/logo.png" class="logo" alt="Christine Tynkevych Films" />
         <ul class="contacts">
@@ -50,7 +121,7 @@
       </div>
     </section>
 
-    <section class="section" data-stellar-background-ratio="0.5" style="background-image:url(/images/background/masha.jpg)">
+    <section class="section masha" data-stellar-background-ratio="0.5">
       <div class="center">
         <iframe src="http://player.vimeo.com/video/64660641?title=0&byline=0&portrait=0" class="player" data-aspect-ratio="1.7777"
                 width="780" height="435"
@@ -62,7 +133,7 @@
       </div>
     </section>
 
-    <section class="section" data-stellar-background-ratio="0.5" style="background-image:url(/images/background/acoustic.jpg)">
+    <section class="section acoustic" data-stellar-background-ratio="0.5">
       <div class="center">
         <iframe src="http://player.vimeo.com/video/62856369?title=0&byline=0&portrait=0" class="player" data-aspect-ratio="1.7777"
                 width="780" height="435"
@@ -74,7 +145,7 @@
       </div>
     </section>
 
-    <section class="section" data-stellar-background-ratio="0.5" style="background-image:url(/images/background/balllerina.jpg)">
+    <section class="section balllerina" data-stellar-background-ratio="0.5">
       <div class="center">
         <iframe src="http://player.vimeo.com/video/65421812?title=0&byline=0&portrait=0" class="player" data-aspect-ratio="1.7777"
                 width="780" height="435"
@@ -86,7 +157,7 @@
       </div>
     </section>
 
-    <section class="section" data-stellar-background-ratio="0.5" style="background-image:url(/images/background/art_deco.jpg)">
+    <section class="section art_deco" data-stellar-background-ratio="0.5">
       <div class="center">
         <iframe src="http://player.vimeo.com/video/61128206?title=0&byline=0&portrait=0" class="player" data-aspect-ratio="1.7777"
                 width="780" height="435"
