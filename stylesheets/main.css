@@ -73,6 +73,11 @@ body {
   padding: 0;
 }
 
+.sections {
+  height: 100%;
+  width: 100%;
+}
+
 .section {
   background-size: cover;
   background-attachment: fixed;

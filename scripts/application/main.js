@@ -125,4 +125,10 @@ $(function() {
       $window.resize(scrollSpy);
     }
   })();
+
+  $('.sections').stellar({
+    horizontalScrolling: false,
+    verticalOffset: 0,
+    scrollProperty: 'transform3d'
+  });
 });
