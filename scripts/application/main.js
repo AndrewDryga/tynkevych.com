@@ -129,6 +129,7 @@ $(function() {
   $('.sections').stellar({
     horizontalScrolling: false,
     verticalOffset: 0,
-    scrollProperty: 'transform3d'
+    scrollProperty: 'transform3d',
+    positionProperty: 'transform3d'
   });
 });
