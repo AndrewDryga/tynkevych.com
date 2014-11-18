@@ -68,6 +68,11 @@ body {
   margin: 0 auto;
 }
 
+.fb-link-logo {
+    margin-top: 10px;
+    width: 25px;
+}
+
 .contacts {
   list-style-type: none;
   padding: 0;
