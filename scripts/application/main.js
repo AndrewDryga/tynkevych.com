@@ -126,10 +126,13 @@ $(function() {
     }
   })();
 
-  $('.sections').stellar({
-    horizontalScrolling: false,
-    verticalOffset: 0,
-    scrollProperty: 'transform3d',
-    positionProperty: 'transform3d'
-  });
+  // setTimeout(function() {
+  //     $('.sections').stellar({
+  //       horizontalScrolling: false,
+  //       verticalOffset: 0,
+  //       hideDistantElements: false,
+  //       scrollProperty: 'transform3d',
+  //       positionProperty: 'transform3d',
+  //     });
+  // }, 100);
 });
